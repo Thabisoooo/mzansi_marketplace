@@ -1,4 +1,4 @@
-?php
+<?php
 session_start();
 ?>
 
@@ -8,7 +8,33 @@ session_start();
     <meta charset="UTF-8">
     <title>Mzansi Marketplace</title>
     <link rel="stylesheet" href="assets/css/style.css">
-	<header class="sa-header">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+
+    <style>
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            font-size: 24px;
+        }
+
+        .social-icons a {
+            color: black;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<header class="sa-header">
     <h1>Mzansi Marketplace</h1>
     
     <div class="language-selector">
@@ -23,11 +49,6 @@ session_start();
     </div>
 </header>
 
-</head>
-<body>
-
-
-
 <nav class="main-nav">
     <ul>
         <li><a href="index.php">Home</a></li>
@@ -40,6 +61,7 @@ session_start();
             <li><a href="login.php">Login</a></li>
             <li><a href="register.php">Register</a></li>
         <?php endif; ?>
+        <li><a href="admin_login.php">Admin</a></li>
     </ul>
 </nav>
 
@@ -49,28 +71,25 @@ session_start();
 
     <section class="features">
         <div class="feature-card">
-			
-			<img src="assets/uploads/2013_sony_camera.jpeg" alt="Used Camera">
+            <img src="assets/uploads/2013_sony_camera.jpeg" alt="Used Camera">
             <h3>2013 Sony Alpha 7R</h3>
-            <p> 36.4MP Full-Frame Mirrorless Camera
-				<br>Legendary resolution in a compact body. Full-frame 36.4MP sensor, E-mount, fast autofocus, and lightweight for pros and enthusiasts. Great condition. Ready to shoot.</p>
+            <p>36.4MP Full-Frame Mirrorless Camera<br>Legendary resolution in a compact body. Full-frame 36.4MP sensor, E-mount, fast autofocus, and lightweight for pros and enthusiasts. Great condition. Ready to shoot.</p>
             <p><strong>R600</strong> or trade</p>
         </div>
         <div class="feature-card">
-			<img src="assets/uploads/mountain_bike.jpg" alt="Used mountain bike">
+            <img src="assets/uploads/mountain_bike.jpg" alt="Used mountain bike">
             <h3>Used Mountain Bicycle</h3>
             <p>Mountain bike with gears, great for trail rides and local commutes.</p>
-            <p><strong>R1050</strong>
+            <p><strong>R1050</strong></p>
         </div>
         <div class="feature-card">
-			<img src="assets/uploads/zulu_beads.jpg" alt="Traditional Beads">
+            <img src="assets/uploads/zulu_beads.jpg" alt="Traditional Beads">
             <h3>Traditional Zulu Beads</h3>
-			<p>Beautiful handmade beadwork. Cultural and stylish.</p>
+            <p>Beautiful handmade beadwork. Cultural and stylish.</p>
             <p><strong>R200</strong> or trade</p>
         </div>
     </section>
 </main>
-
 
 <script>
 const translations = {
@@ -98,7 +117,6 @@ const translations = {
         welcome: "U amukeriwile eMzansi Marketplace!",
         description: "Xipulatifomo xa barter xa Afrika Dzonga lexi hlanganisiweke."
     }
-    
 };
 
 function setLanguage() {
@@ -118,14 +136,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("language").value = lang;
     updateText(lang);
 });
-
-</script>
-
-
 </script>
 
 <footer class="sa-footer">
-    <p>&copy; <?php echo date('Y'); ?> Mzansi Marketplace. <br>	Umuntu Ngumuntu Ngabantu</p>
-</footer>
-</body>
-</html>
+    <p>&copy; <?php echo date('Y'); ?> Mzansi Marketplace.<br>Umuntu Ngumuntu Ngabantu</p>
+    
+    <div class="social-icons">
+        <a href="https://www.instagram.com/yourpage" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.t
